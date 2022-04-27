@@ -6,6 +6,7 @@ public class BinaryTree {
 	private int sumOfLeafs = 0;
 	private int sumOfInner = 0;
 	private int lvlCtr = 1;
+	private int sumOfAll = 0;
 	
 	public BinaryTree() {
 		this.root = null;
@@ -88,6 +89,17 @@ public class BinaryTree {
 		System.out.print(node.getData() + " ");
 	}
 	
+	public void sumUpAll(Node node) {
+		if(node == null) {
+			return;
+		}
+		
+		this.sumOfAll += node.getData();
+		this.sumUpAll(node.getLeftNode());
+		this.sumUpAll(node.getRightNode());
+		
+	}
+	
 	public void sumUpLeafs(Node node) {
 		if(node == null) {
 			return;
@@ -154,6 +166,10 @@ public class BinaryTree {
 
 	public int getSumOfInner() {
 		return sumOfInner;
+	}
+	
+	public int getSumOfAll() {
+		return this.sumOfAll;
 	}
 	
 	

@@ -33,6 +33,9 @@ public class Main {
 		System.out.println();
 		bt.printAtLevel(bt.getRoot(), 3);
 		System.out.println();
+		
+		bt.sumUpAll(bt.getRoot());
+		System.out.println(bt.getSumOfAll());
 
 	}
 
